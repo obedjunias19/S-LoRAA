@@ -1,0 +1,26 @@
+
+# Requirements for S-LoRAA
+# Notes:
+# - The `pip install ...` command lines were removed; requirements files list packages.
+# - To install the vLLM nightly pre-release use the explicit pip command shown below,
+#   because `--pre` is a pip CLI flag and isn't applied per-package inside this file.
+
+# --index-url https://download.pytorch.org/whl/cu118
+# --extra-index-url https://wheels.vllm.ai/nightly
+
+torch
+torchvision
+torchaudio
+huggingface-hub
+transformers==4.53.0
+peft
+accelerate
+pandas
+matplotlib
+seaborn
+networkx
+pytest
+vllm
+
+# If you need the vLLM nightly pre-release, run this separately (recommended):
+# pip install -U vllm --pre --extra-index-url https://wheels.vllm.ai/nightly
