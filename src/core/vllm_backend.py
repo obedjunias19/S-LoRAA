@@ -16,7 +16,7 @@ class VLLMBackend:
         self,
         model_path: str,
         max_loras: int = 8,
-        gpu_memory_utilization: float = 0.85
+        gpu_memory_utilization: float = 0.75
     ):
         logger.info(f"Initializing vLLM with {model_path}...")
         
@@ -27,7 +27,8 @@ class VLLMBackend:
             max_lora_rank=64,
             dtype="float16",
             gpu_memory_utilization=gpu_memory_utilization,
-            trust_remote_code=True
+            trust_remote_code=True,
+            max_model_len=1024
         )
         
         logger.info("vLLM initialized")
